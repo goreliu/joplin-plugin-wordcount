@@ -1,0 +1,9 @@
+{
+    "id": "com.mocihan.wordcount",
+    "manifest_version": 1,
+    "app_min_version": "1.6.7",
+    "name": "Word Count",
+    "version": "1.0.0",
+    "description": "Word count.",
+    "homepage_url": "https://github.com/goreliu/joplin-plugin-wordcount"
+}
