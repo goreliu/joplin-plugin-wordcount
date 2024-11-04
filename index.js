@@ -1,5 +1,8 @@
 joplin.plugins.register({
     onStart: async function() {
+        const dialogs = joplin.views.dialogs;
+        const dialogHandle = await dialogs.create('WordCount');
+
         await joplin.commands.register({
             name: 'WordCount',
             label: 'Word Count',
@@ -25,12 +28,14 @@ joplin.plugins.register({
                 const enArr = content.match(regMap['English']) || [];
                 const numberArr = content.match(regMap['Number']) || [];
                 const output = '汉字：' + chArr.length
-                    + ' \n中文标点：' + punArr.length
-                    + ' \n汉字 + 中文标点：' + String(chArr.length + punArr.length)
-                    + ' \n英文：' + enArr.length
-                    + ' \n数字：' + numberArr.length
-                    + ' \n总数：' + String(chArr.length + punArr.length + enArr.length);
-                alert(output);
+                    + ' <br>中文标点：' + punArr.length
+                    + ' <br>汉字 + 中文标点：' + String(chArr.length + punArr.length)
+                    + ' <br>英文：' + enArr.length
+                    + ' <br>数字：' + numberArr.length
+                    + ' <br>总数：' + String(chArr.length + punArr.length + enArr.length);
+                // alert(output);
+                dialogs.setHtml(dialogHandle, '<div style="font-size: 1.5em">' + output + '<\/div>');
+                dialogs.open(dialogHandle);
             },
         });
 
