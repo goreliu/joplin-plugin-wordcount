@@ -3,7 +3,8 @@ joplin.plugins.register({
         await joplin.commands.register({
             name: 'WordCount',
             label: 'Word Count',
-            iconName: 'fas fa-music',
+            // https://fontawesome.com/v5/search
+            iconName: 'fab fa-wpforms',
             execute: async () => {
                 const note = await joplin.workspace.selectedNote();
                 const regMap = {
@@ -33,6 +34,8 @@ joplin.plugins.register({
             },
         });
 
-        await joplin.views.toolbarButtons.create('WordCount', 'WordCount', 'editorToolbar');
+        await joplin.views.toolbarButtons.create('WordCountButton', 'WordCount', 'editorToolbar');
+
+        await joplin.views.menuItems.create('WordCountMenu', 'WordCount');
     },
 });
