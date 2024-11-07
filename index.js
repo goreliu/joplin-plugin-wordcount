@@ -28,8 +28,8 @@ joplin.plugins.register({
                 const enArr = content.match(regMap['English']) || [];
                 const numberArr = content.match(regMap['Number']) || [];
                 const output = '汉字：' + chArr.length
-                    + ' <br>中文标点：' + punArr.length
-                    + ' <br>汉字 + 中文标点：' + String(chArr.length + punArr.length)
+                    + ' <br>全角标点：' + punArr.length
+                    + ' <br>汉字 + 全角标点：' + String(chArr.length + punArr.length)
                     + ' <br>英文：' + enArr.length
                     + ' <br>数字：' + numberArr.length
                     + ' <br>总数：' + String(chArr.length + punArr.length + enArr.length);
